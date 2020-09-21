@@ -1,9 +1,10 @@
 {
   "name": "Gifter",
   "version": "1.0",
-  "description": "Gifter Extension to store gifts in the list",
+  "description": "Gifter Extension to store gifts in your gift list",
   "manifest_version": 2,
   "browser_action": {
+    "default_icon": "assets/icon.png",
     "default_popup": "index.html"
   }
 }
