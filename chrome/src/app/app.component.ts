@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,24 +7,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   isLoggedIn = false;
-  processing = false;
-  loginForm;
-
-  constructor(private fb: FormBuilder){
-    this.loginForm = fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-    });
-  }
-
-  get f(): any{
-    return this.loginForm.controls;
-  }
+  user;
 
   ngOnInit(): void{
-    // Check for login creds
-  }
-
-  executeLogin(): void{
+    // Check for Login Creds
+    const authToken = sessionStorage.getItem('authToken');
+    if (authToken) {
+      this.isLoggedIn = true;
+    }
+    const user = sessionStorage.getItem('user');
   }
 }
